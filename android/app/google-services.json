@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629625181772",
+    "project_id": "t-shirt-wo",
+    "storage_bucket": "t-shirt-wo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629625181772:android:49fed50818fb90a20c86e9",
+        "android_client_info": {
+          "package_name": "com.example.t_shirt_world"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8IrIAoFjq9yUTSPet4OtGYU4k1S0QfyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
