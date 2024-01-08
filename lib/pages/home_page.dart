@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:t_shirt_world/app_color.dart';
+import 'package:t_shirt_world/controller/bottom_navigation_controller.dart';
 import 'package:t_shirt_world/helper/helper.dart';
 import 'package:t_shirt_world/pages/added_product_list.dart';
 import 'package:t_shirt_world/pages/auth/login_page.dart';
@@ -8,6 +10,7 @@ import 'package:t_shirt_world/pages/product_details.dart';
 import 'package:t_shirt_world/pages/search_page.dart';
 import 'package:t_shirt_world/pages/user_profile_page.dart';
 import 'package:t_shirt_world/service/auth_service.dart';
+import 'package:t_shirt_world/widgets/bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -82,58 +85,8 @@ class _HomePageState extends State<HomePage> {
   //   );
   // }
 
-  int _currentIndex = 0;
-  
-  BottomNavigationBar _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      selectedFontSize: 16,
-      unselectedFontSize: 14,
-      selectedItemColor: AppColors.secondary,
-      selectedIconTheme: IconThemeData(
-        color: AppColors.secondary,
-      ),
-      onTap: _onTabTapped,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined), label: "Cart"),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "You"),
-      ],
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _currentIndex,
-    );
-  }
-
-  _onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-
-      if (_currentIndex == 0) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomePage()),
-        );
-      } else if (_currentIndex == 1) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SearchPage()),
-        );
-      } else if (_currentIndex == 2) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AddedList()),
-        );
-      } else if (_currentIndex == 3) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => UserProfile()),
-        );
-      }
-
-      print(_currentIndex);
-    });
-  }
+  // final BottomNavigationController bottomNavigationController =
+  //     Get.put(BottomNavigationController());
 
   @override
   Widget build(BuildContext context) {
@@ -474,7 +427,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      bottomNavigationBar: _buildBottomNavigationBar(),
+      bottomNavigationBar:
+          CustomBottomNavigationBar(index: 0,),
     );
   }
 }

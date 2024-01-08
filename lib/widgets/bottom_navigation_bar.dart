@@ -1,178 +1,121 @@
-// import 'package:flutter/material.dart';
-// import 'package:kazirdorver/features/profile/admin_and_guest_profile/Admin_profile_update/view/admin_profile_edit_home.dart';
-// import 'package:kazirdorver/utils/appColor.dart';
-// import 'package:kazirdorver/features/blog/view/bloghomePage.dart';
-// import 'package:kazirdorver/features/home/admin_home_page.dart';
-// import 'package:kazirdorver/features/home/guest_home_page.dart';
-// import 'package:kazirdorver/features/home/kazi_home_page.dart';
-// import 'package:kazirdorver/features/home/user_home_page.dart';
-// import 'package:kazirdorver/features/news/view/newshomePage.dart';
-// import 'package:kazirdorver/features/profile/admin_and_guest_profile/guest_profile.dart';
-// import 'package:kazirdorver/features/profile/kazi_profile/kazi_profile_page.dart';
-// import 'package:kazirdorver/features/profile/user_profile/user_profile_page.dart';
-// import 'package:t_shirt_world/app_color.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:t_shirt_world/app_color.dart';
+import 'package:t_shirt_world/controller/bottom_navigation_controller.dart';
+import 'package:t_shirt_world/pages/added_product_list.dart';
+import 'package:t_shirt_world/pages/home_page.dart';
+import 'package:t_shirt_world/pages/search_page.dart';
+import 'package:t_shirt_world/pages/user_profile_page.dart';
 
-// class UserBottomNavigationBar extends StatefulWidget {
-//   final int index;
-//   final int home;
-//   UserBottomNavigationBar({super.key, required this.index, required this.home});
+class CustomBottomNavigationBar extends StatefulWidget {
+  final index;
+  const CustomBottomNavigationBar({super.key,required this.index});
 
-//   @override
-//   State<UserBottomNavigationBar> createState() =>
-//       _UserBottomNavigationBarState();
-// }
+  @override
+  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+}
 
-// class _UserBottomNavigationBarState extends State<UserBottomNavigationBar> {
- 
-//   // void _onItemTapped(int index) {
-//   //   setState(() {
-//   //     if (index == 0) {
-//   //       if (widget.home == 0) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(builder: (context) => GuestHomePage()),
-//   //         );
-//   //       } else if (widget.home == 1) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(builder: (context) => UserHomePage()),
-//   //         );
-//   //       } else if (widget.home == 2) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(builder: (context) => KaziHomePage()),
-//   //         );
-//   //       } else if (widget.home == 3) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(builder: (context) => AdminHomePage()),
-//   //         );
-//   //       }
-//   //     } else if (index == 1) {
-//   //       if (widget.home == 0 || widget.home == 1) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => BlogHome(
-//   //                     visiable: false,
-//   //                     k: widget.home,
-//   //                   )),
-//   //         );
-//   //       } else if (widget.home == 2 || widget.home == 3) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => BlogHome(
-//   //                     visiable: true,
-//   //                     k: widget.home,
-//   //                   )),
-//   //         );
-//   //       }
-//   //     } else if (index == 2) {
-//   //       if (widget.home == 0 || widget.home == 1) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => NewsHome(
-//   //                     k: widget.home,
-//   //                     visible: false,
-//   //                   )),
-//   //         );
-//   //       } else if (widget.home == 2 || widget.home == 3) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => NewsHome(
-//   //                     k: widget.home,
-//   //                     visible: true,
-//   //                   )),
-//   //         );
-//   //       }
-//   //     } else if (index == 3) {
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
+  
+    // final BottomNavigationController bottomNavigationController =
+    //   Get.put(BottomNavigationController());
 
-//   //       if (widget.home == 0) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => GuestProfilePage(),
-//   //                   ),
-//   //         );
-//   //       } 
-//   //       else if (widget.home == 1) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => UserProfilePage(
-//   //                     k: widget.home,
-//   //                   )),
-//   //         );
-//   //       } else if (widget.home == 2) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => KaziProfilePage(
-//   //                     k: widget.home,
-//   //                   )),
-//   //         );
-//   //       } else if (widget.home == 3) {
-//   //         Navigator.push(
-//   //           context,
-//   //           MaterialPageRoute(
-//   //               builder: (context) => AdminProfileEditHome(),
-                
-//   //             ),
-//   //         );
-//   //       }
-//   //     }
-//   //   });
-//   // }
+  int _currentIndex = 0;
+ _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomNavigationBar(
-//         items: <BottomNavigationBarItem>[
-//           BottomNavigationBarItem(
-//               icon: Icon(
-//                 Icons.home,
-//                 //  color: AppColors.primary,
-//               ),
-//               label: 'Home',
-//               // backgroundColor: _selectedIndex == 0 ? Colors.red : Colors.amber,
-//               backgroundColor: AppColors.backgroundColor),
-//           BottomNavigationBarItem(
-//               icon: Icon(
-//                 Icons.article,
-//                 // color: AppColors.primary,
-//               ),
-//               label: 'Blog',
-//               backgroundColor: AppColors.backgroundColor),
-//           BottomNavigationBarItem(
-//               icon: Icon(
-//                 Icons.newspaper,
-//                 //  color: AppColors.primary,
-//               ),
-//               label: 'News',
-//               backgroundColor: AppColors.backgroundColor),
-//           BottomNavigationBarItem(
-//             icon: Icon(
-//               Icons.person,
-//               //color: AppColors.primary,
-//             ),
-//             label: 'Profile',
-//             backgroundColor: AppColors.backgroundColor,
-//           ),
-//         ],
-//         type: BottomNavigationBarType.fixed,
-//         currentIndex: widget.index,
-//         selectedItemColor: AppColors.secondary,
-//         selectedLabelStyle: TextStyle(fontSize: 18),
-//         iconSize: 40,
-//         // onTap: ,
-//         showUnselectedLabels: true,
-//         unselectedItemColor: AppColors.bottomNavigationUnselectedColor,
-//         unselectedLabelStyle: TextStyle(
-//           fontSize: 18,
-//         ),
-//         elevation: 5);
-//   }
-// }
+      if (_currentIndex == 0) {
+
+         Navigator.pushNamed(context, '/');
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => HomePage()),
+        // );
+      } else if (_currentIndex == 1) {
+
+         Navigator.pushNamed(context, '/search');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SearchPage()),
+        );
+      } else if (_currentIndex == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AddedList()),
+        );
+      } else if (_currentIndex == 3) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => UserProfile()),
+        );
+      }
+
+      print(_currentIndex);
+    });
+  }
+  //    onTabTapped(int index) {
+  //   _currentIndex = index;
+
+  //   if (index == 0) {
+
+  //     Navigator.pushNamed(context, '/');
+
+  //     //  navigatorKey.currentState?.pushNamed('/');
+
+  //     // WidgetsBinding.instance.addPostFrameCallback((_) {
+      
+
+  //     //   // navigatorKey.currentState?.push(
+  //     //   //   MaterialPageRoute(
+  //     //   //     builder: (_) => HomePage(),
+  //     //   //   ),
+  //     //   // );
+  //     // });
+
+  //     // Navigator.push(
+  //     //   context,
+  //     //   MaterialPageRoute(builder: (context) => HomePage()),
+  //     // );
+  //   } else if (_currentIndex.value == 1) {
+  //     // Navigator.push(
+  //     //   context,
+  //     //   MaterialPageRoute(builder: (context) => SearchPage()),
+  //     // );
+  //   } else if (_currentIndex.value == 2) {
+  //     // Navigator.push(
+  //     //   context,
+  //     //   MaterialPageRoute(builder: (context) => AddedList()),
+  //     // );
+  //   } else if (_currentIndex.value == 3) {
+  //     // Navigator.push(
+  //     //   context,
+  //     //   MaterialPageRoute(builder: (context) => UserProfile()),
+  //     // );
+  //   }
+  // }
+      
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      selectedFontSize: 16,
+      unselectedFontSize: 14,
+      selectedItemColor: AppColors.secondary,
+      selectedIconTheme: IconThemeData(
+        color: AppColors.secondary,
+      ),
+      onTap:_onTabTapped,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined), label: "Cart"),
+        BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "You"),
+      ],
+      type: BottomNavigationBarType.fixed,
+      currentIndex: _currentIndex,
+    );
+  
+    
+  }
+}
