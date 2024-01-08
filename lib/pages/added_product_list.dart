@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'product_details.dart';
 
+//
 class AddedList extends StatefulWidget {
   const AddedList({Key? key}) : super(key: key);
 
@@ -31,8 +32,10 @@ class _AddedListState extends State<AddedList> {
               child: ListTile(
                 // tileColor: Colors.deepOrange,
                 leading: CircleAvatar(
-                  child:
-                     Image.asset("assets/t_shirt_world_logo.jpg",fit: BoxFit.cover,),
+                  child: Image.asset(
+                    "assets/t_shirt_world_logo.jpg",
+                    fit: BoxFit.cover,
+                  ),
                   //  Image.network(
                   //   addedProduct[index]["img"],
                   //   fit: BoxFit.cover,
@@ -40,24 +43,22 @@ class _AddedListState extends State<AddedList> {
                 ),
                 title: Text(
                   "Product Name",
-                //  addedProduct[index]["name"],
-                  style:
-                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+                  //  addedProduct[index]["name"],
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(
-                  "550",
-                  //addedProduct[index]["price"],
-                    style: TextStyle(
-                        fontSize: 16.sp, fontWeight: FontWeight.bold)),
+                subtitle: Text("550",
+                    //addedProduct[index]["price"],
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 trailing: IconButton(
                   onPressed: () {
                     setState(() {
-                     // addedProduct.removeAt(index);
+                      // addedProduct.removeAt(index);
                     });
                   },
                   icon: Icon(
                     Icons.remove_shopping_cart,
-                    size: 25.sp,
+                    size: 25,
                   ),
                 ),
               ),
@@ -70,15 +71,17 @@ class _AddedListState extends State<AddedList> {
               // addedProduct.clear();
               Fluttertoast.showToast(
                 msg: 'Order successful.',
-                fontSize: 30.sp,
+                fontSize: 30,
               );
             });
           },
 
           label: Text(
-            "Order Now", style: TextStyle(color: Colors.white, 
-            fontSize: 18,
-            //fontSize: 18.sp,
+            "Order Now",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              //fontSize: 18.sp,
             ),
             //   ),
           ),
