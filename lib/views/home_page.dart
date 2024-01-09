@@ -89,12 +89,12 @@ class _HomePageState extends State<HomePage> {
   //     Get.put(BottomNavigationController());
 
   final ProductController productController = Get.put(ProductController());
-  var colorList = [
-    Color(0xffFEDEDF),
-    Color(0xffFFEAC3),
-    Color(0xffCEE7D4),
-    Color(0xffFFFCCF),
-  ];
+  // var colorList = [
+  //   Color(0xffFEDEDF),
+  //   Color(0xffFFEAC3),
+  //   Color(0xffCEE7D4),
+  //   Color(0xffFFFCCF),
+  // ];
   var categoriesImageList = [
     12, 7, 2, 14
     //  productController.productList[7]["image"].toString(),
@@ -246,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                           productController: productController,
                           width: width,
                           height: height * 0.15,
-                          color: colorList[index],
+                        //  color: colorList[index],
                           //   color: colorList[index],
                           index: index,
                           ImageListindex: categoriesImageList[index],
@@ -614,7 +614,7 @@ class CategoriesCard extends StatelessWidget {
     super.key,
     required this.width,
     required this.height,
-    required this.color,
+    //required this.color,
     required this.ImageListindex,
     required this.productController,
     required this.index,
@@ -624,7 +624,7 @@ class CategoriesCard extends StatelessWidget {
 
   final double width;
   final double height;
-  final Color color;
+ // final Color color;
   final int ImageListindex;
   final int index;
   var productController;
