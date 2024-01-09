@@ -2,13 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/app_color.dart';
-import 'package:t_shirt_world/controller/signInStatus_controller.dart';
-import 'package:t_shirt_world/helper/helper.dart';
-import 'package:t_shirt_world/pages/auth/login_page.dart';
-import 'package:t_shirt_world/pages/home_page.dart';
-import 'package:t_shirt_world/pages/search_page.dart';
-import 'package:t_shirt_world/shared/constants.dart';
+import 'package:t_shirt_world/utils/app_color.dart';
+import 'package:t_shirt_world/controllers/signInStatus_controller.dart';
+import 'package:t_shirt_world/utils/constants.dart';
 import 'package:t_shirt_world/utils/global.dart';
 import 'package:t_shirt_world/utils/route_generator.dart';
 

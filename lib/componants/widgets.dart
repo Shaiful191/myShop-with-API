@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:t_shirt_world/app_color.dart';
-import 'package:t_shirt_world/shared/constants.dart';
+import 'package:t_shirt_world/utils/app_color.dart';
+import 'package:t_shirt_world/utils/constants.dart';
 
 final textInputDecoration = InputDecoration(
   labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),

@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:t_shirt_world/app_color.dart';
+import 'package:t_shirt_world/utils/app_color.dart';
 // import 'package:online_bazar/pages/added_product_list.dart';
 // import 'package:online_bazar/pages/products_description.dart';
 

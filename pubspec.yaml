@@ -43,6 +43,7 @@ dependencies:
   # carousel_slider:
   fluttertoast:
   get: 
+  http: 
 
 dev_dependencies:
   flutter_test:

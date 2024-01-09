@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/controller/signInStatus_controller.dart';
-import 'package:t_shirt_world/pages/auth/login_page.dart';
-import 'package:t_shirt_world/pages/home_page.dart';
-import 'package:t_shirt_world/pages/search_page.dart';
+import 'package:t_shirt_world/controllers/signInStatus_controller.dart';
+import 'package:t_shirt_world/views/added_product_list.dart';
+import 'package:t_shirt_world/views/auth/login_page.dart';
+import 'package:t_shirt_world/views/home_page.dart';
+import 'package:t_shirt_world/views/search_page.dart';
+import 'package:t_shirt_world/views/user_profile_page.dart';
+
 
 class RouteGenerator {
-  static  IsSignInController isSignInController = Get.find();
+  static IsSignInController isSignInController = Get.find();
   //  final IsSignInController isSignInController = Get.put(IsSignInController());
 
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -21,6 +24,10 @@ class RouteGenerator {
         );
       case '/search':
         return MaterialPageRoute(builder: (context) => SearchPage());
+      case '/cart':
+        return MaterialPageRoute(builder: (context) => AddedList());
+      case '/profile':
+        return MaterialPageRoute(builder: (context) => UserProfile());
 
       default:
         return MaterialPageRoute(
