@@ -6,5 +6,6 @@ class Constants {
   
   //api url
   static String BASE_URL = "https://fakestoreapi.com/products";
+  static String PRODUCTCATEGORIES_BASE_URL = "https://fakestoreapi.com/products/categories";
   //static String BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 }

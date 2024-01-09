@@ -13,13 +13,14 @@ class TestShowProducts extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Test show product'),
       ),
-      body: Obx(() {
+      body:
+       Obx(() {
         if (productController.isLoading.value) {
           return Center(
             child: CircularProgressIndicator(),
           );
         } else {
-          print(productController.productList);
+         // print(productController.productList);
 
           return ListView.builder(
               itemCount: productController.productList.length,
@@ -39,6 +40,7 @@ class TestShowProducts extends StatelessWidget {
                         ),
                         Text(productController.productList[index]["title"]
                             .toString()),
+                          
                       ],
                     ),
                   ),
@@ -46,6 +48,7 @@ class TestShowProducts extends StatelessWidget {
               });
         }
       }),
+    
     );
   }
 }
