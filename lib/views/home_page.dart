@@ -246,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                           productController: productController,
                           width: width,
                           height: height * 0.15,
-                        //  color: colorList[index],
+                          //  color: colorList[index],
                           //   color: colorList[index],
                           index: index,
                           ImageListindex: categoriesImageList[index],
@@ -260,94 +260,6 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   );
-
-                  // Column(
-                  //   //  mainAxisAlignment: MainAxisAlignment.center,
-                  //   crossAxisAlignment: CrossAxisAlignment.center,
-
-                  //   children: [
-
-                  //     SizedBox(
-                  //       height: 40,
-                  //       child: Image.network(
-                  //         productController.productList[0]["image"].toString(),
-                  //       ),
-                  //     ),
-                  //     SizedBox(
-                  //       height: height * 0.01,
-                  //     ),
-                  //     Text(
-                  //       productController.productList[0]["category"].toString(),
-                  //       style: TextStyle(
-                  //         fontWeight: FontWeight.w500,
-                  //         color: Colors.black,
-                  //       ),
-                  //     ),
-                  //     // Text(
-                  //     //   productController.productList[0]["title"].toString(),
-                  //     //   style: TextStyle(
-                  //     //     fontWeight: FontWeight.w500,
-                  //     //     color: Colors.black,
-                  //     //   ),
-                  //     // ),
-                  //   ],
-
-                  //   // [
-                  //   //   SizedBox(
-                  //   //     height: 40,
-                  //   //     child: Image.network(
-                  //   //       productController.productList[0]["image"].toString(),
-                  //   //     ),
-                  //   //   ),
-                  //   //   SizedBox(
-                  //   //     height: 3,
-                  //   //   ),
-                  //   //   Text(productController.productList[0]["title"].toString()),
-                  //   // ],
-                  // );
-
-                  // return ListView.builder(
-                  //     scrollDirection: Axis.horizontal,
-                  //     itemCount: productController.productList.length,
-                  //     itemBuilder: (context, index) {
-                  //       var products = productController.productList[index];
-
-                  //       return Column(
-                  //         mainAxisAlignment: MainAxisAlignment.start,
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         children: [
-                  //           Image.network(products["image"].toString()),
-                  //           SizedBox(
-                  //             height: 3,
-                  //           ),
-                  //           Text(productController.productList[index]
-                  //                   ["title"]
-                  //               .toString()),
-                  //         ],
-                  //       );
-
-                  //       // Column(
-                  //       //   mainAxisAlignment: MainAxisAlignment.center,
-                  //       //   crossAxisAlignment: CrossAxisAlignment.center,
-                  //       //   children: [
-                  //       //     Icon(
-                  //       //       Icons.food_bank,
-                  //       //       size: 40,
-                  //       //       color: AppColors.primary,
-                  //       //     ),
-                  //       //     SizedBox(
-                  //       //       height: height * 0.01,
-                  //       //     ),
-                  //       //     Text(
-                  //       //       categoriesName,
-                  //       //       style: TextStyle(
-                  //       //         fontWeight: FontWeight.w500,
-                  //       //         color: Colors.black,
-                  //       //       ),
-                  //       //     ),
-                  //       //   ],
-                  //       // );
-                  //     });
                 }
               }),
             ),
@@ -361,9 +273,14 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: ListView.separated(
                 padding: EdgeInsets.all(0),
-                itemCount: 5,
+                itemCount: 7,
                 separatorBuilder: (BuildContext context, int index) {
-                  return BestSellingCard(height: height, width: width);
+                  return BestSellingCard(
+                    height: height,
+                    width: width,
+                    productController: productController,
+                    BestSellingindex: index + 10,
+                  );
                 },
                 itemBuilder: (BuildContext context, int index) {
                   return SizedBox(
@@ -416,15 +333,20 @@ class HomePageAppBar extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class BestSellingCard extends StatelessWidget {
-  const BestSellingCard({
+  BestSellingCard({
     super.key,
     required this.height,
     required this.width,
+    required this.productController,
+    required this.BestSellingindex,
   });
 
   final double height;
   final double width;
+  final productController;
+  int BestSellingindex;
 
   @override
   Widget build(BuildContext context) {
@@ -450,11 +372,17 @@ class BestSellingCard extends StatelessWidget {
               ),
               width: width * 0.26,
               height: height * 0.12,
-              child: Icon(
-                Icons.food_bank,
-                size: 40,
-                color: AppColors.primary,
+              child: Image.network(
+                productController.productList[BestSellingindex]["image"]
+                    .toString(),
+                fit: BoxFit.cover,
               ),
+
+              //  Icon(
+              //   Icons.food_bank,
+              //   size: 40,
+              //   color: AppColors.primary,
+              // ),
             ),
             SizedBox(
               width: width * 0.06,
@@ -466,7 +394,11 @@ class BestSellingCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Orange Fresh Juice",
+                    productController.productList[BestSellingindex]["title"]
+                        .toString(),
+                    //     "Orange Fresh Juice",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -474,7 +406,10 @@ class BestSellingCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "It dummy reasonable to laying Lorem words to.",
+                    productController.productList[BestSellingindex]
+                            ["description"]
+                        .toString(),
+                    // "It dummy reasonable to laying Lorem words to.",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -482,7 +417,10 @@ class BestSellingCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Tk.550",
+                    "TK." +
+                        productController.productList[BestSellingindex]["price"]
+                            .toString(),
+                    // "Tk.550",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -624,7 +562,7 @@ class CategoriesCard extends StatelessWidget {
 
   final double width;
   final double height;
- // final Color color;
+  // final Color color;
   final int ImageListindex;
   final int index;
   var productController;
