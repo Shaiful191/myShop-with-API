@@ -239,6 +239,7 @@ class _HomePageState extends State<HomePage> {
                   return Expanded(
                     // flex: 1,
                     child: ListView.separated(
+                     
                       scrollDirection: Axis.horizontal,
                       itemCount: 4,
                       itemBuilder: (BuildContext context, int index) {
