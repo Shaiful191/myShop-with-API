@@ -92,16 +92,24 @@ class _LoginPageState extends State<LoginPage> {
                                     // ),
 
                                     CircleAvatar(
+                                      // backgroundColor: Colors.grey,
+                                      backgroundColor: AppColors.card,
                                       radius: 30,
-                                      backgroundImage: AssetImage(
-                                          "assets/mySHOP_logo.jpg"),
+                                      child: Text(
+                                        "mS",
+                                        style: TextStyle(
+                                            color: AppColors.secondary,
+                                            fontStyle: FontStyle.italic),
+                                      ),
+                                      // backgroundImage: AssetImage(
+                                      //     "assets/mySHOP_logo.pg"),
                                     ),
 
                                     SizedBox(
                                       height: 20,
                                     ),
                                     Text(
-                                      "T-Shirt World",
+                                      "mySHOP",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
@@ -123,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         const Text(
-                          'Login now to see new t-shirt',
+                          'Login now to see new products',
                           style: TextStyle(
                               color: AppColors.secondary,
                               fontSize: 18,

@@ -99,16 +99,24 @@ class _RegisterPageState extends State<RegisterPage> {
                                     // ),
 
                                     CircleAvatar(
+                                      // backgroundColor: Colors.grey,
+                                      backgroundColor: AppColors.card,
                                       radius: 30,
-                                      backgroundImage: AssetImage(
-                                          "assets/mySHOP_logo.jpg"),
+                                      child: Text(
+                                        "mS",
+                                        style: TextStyle(
+                                            color: AppColors.secondary,
+                                            fontStyle: FontStyle.italic),
+                                      ),
+                                      // backgroundImage: AssetImage(
+                                      //     "assets/mySHOP_logo.pg"),
                                     ),
 
                                     SizedBox(
                                       height: 20,
                                     ),
                                     Text(
-                                      "T-Shirt World",
+                                      "mySHOP",
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700,
@@ -131,7 +139,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
 
                         const Text(
-                          'Create your account now to buy t-shirt',
+                          'Create your account now to buy',
                           style: TextStyle(
                               color: AppColors.secondary,
                               fontSize: 18,
