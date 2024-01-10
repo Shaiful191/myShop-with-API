@@ -33,7 +33,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       if (currentIndex == 0) {
         Navigator.pushNamed(context, '/');
       } else if (currentIndex == 1) {
-        Navigator.pushNamed(context, '/search');
+         showSearch(context: context, delegate: SearchPage());
+      //  Navigator.pushNamed(context, '/search');
       } else if (currentIndex == 2) {
         Navigator.pushNamed(context, '/cart');
       } else if (currentIndex == 3) {

@@ -22,8 +22,9 @@ class RouteGenerator {
                 : const LoginPage();
           }),
         );
-      case '/search':
-        return MaterialPageRoute(builder: (context) => SearchPage());
+    //   case '/search':
+    //     return  showSearch(context: context, delegate: SearchBlog());
+    //  //   return MaterialPageRoute(builder: (context) => SearchPage());
       case '/cart':
         return MaterialPageRoute(builder: (context) => AddedList());
       case '/profile':

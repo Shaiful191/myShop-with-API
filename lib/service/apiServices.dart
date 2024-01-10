@@ -5,17 +5,27 @@ import 'package:mySHOP/models/product_model.dart';
 import 'package:mySHOP/utils/constants.dart';
 
 class ApiService {
-
-  static Future<List> fetchProducts() async {
+  static Future<List> fetchProducts({String? query}) async {
+    print("api called");
+    
     List productList = [];
     try {
       final resposne = await http.get(Uri.parse(Constants.BASE_URL));
 
       var result = jsonDecode(resposne.body);
+    
 
       if (resposne.statusCode == 200) {
         productList = result;
-       /// print(productList);
+
+
+        if (query != null) {
+          print(productList);
+
+         productList=productList.where((e)=>e['title'].toString().toLowerCase().contains(query.toString().toLowerCase())).toList();
+          print("After search");
+        }
+
         return productList;
       } else {
         return productList;
@@ -26,16 +36,18 @@ class ApiService {
   }
 
 
-    static Future<List> fetchCategoriesProducts() async {
+  static Future<List> fetchCategoriesProducts() async {
     List categoriesList = [];
     try {
-      final resposne = await http.get(Uri.parse(Constants.PRODUCTCATEGORIES_BASE_URL));
+      final resposne =
+          await http.get(Uri.parse(Constants.PRODUCTCATEGORIES_BASE_URL));
 
       var result = jsonDecode(resposne.body);
 
       if (resposne.statusCode == 200) {
         categoriesList = result;
-       /// print(productList);
+
+        /// print(productList);
         return categoriesList;
       } else {
         return categoriesList;
@@ -44,8 +56,6 @@ class ApiService {
       return categoriesList;
     }
   }
-
-
 }
 
 // import 'dart:convert';
