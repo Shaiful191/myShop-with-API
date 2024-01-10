@@ -129,11 +129,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ],
                         ),
 
-                        // const Text(
-                        //   'T-Shirt World',
-                        //   style: TextStyle(
-                        //       fontSize: 40, fontWeight: FontWeight.bold),
-                        // ),
+                       
                         const SizedBox(
                           height: 20,
                         ),

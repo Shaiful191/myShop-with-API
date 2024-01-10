@@ -122,11 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
 
-                        // const Text(
-                        //   'Groupie',
-                        //   style: TextStyle(
-                        //       fontSize: 40, fontWeight: FontWeight.bold),
-                        // ),
+                      
                         const SizedBox(
                           height: 10,
                         ),
