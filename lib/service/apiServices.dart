@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:t_shirt_world/models/product_model.dart';
-import 'package:t_shirt_world/utils/constants.dart';
+import 'package:mySHOP/models/product_model.dart';
+import 'package:mySHOP/utils/constants.dart';
 
 class ApiService {
 
@@ -51,8 +51,8 @@ class ApiService {
 // import 'dart:convert';
 
 // import 'package:http/http.dart' as http;
-// import 'package:t_shirt_world/models/product_model.dart';
-// import 'package:t_shirt_world/utils/constants.dart';
+// import 'package:mySHOP/models/product_model.dart';
+// import 'package:mySHOP/utils/constants.dart';
 
 // class ApiService {
 //   static Future<List> fetchProducts() async {

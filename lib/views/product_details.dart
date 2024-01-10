@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:t_shirt_world/utils/app_color.dart';
+import 'package:mySHOP/utils/app_color.dart';
 // import 'package:online_bazar/pages/added_product_list.dart';
 // import 'package:online_bazar/pages/products_description.dart';
 
@@ -70,7 +70,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   padding: const EdgeInsets.only(left: 3, right: 3),
                   child: Container(
                     color: Colors.blueAccent,
-                    child: Image.asset("assets/t_shirt_world_logo.jpg"),
+                    child: Image.asset("assets/mySHOP_logo.jpg"),
                     // Image.network(
                     //   widget._product["product-img"],fit: BoxFit.cover,
                     // ),

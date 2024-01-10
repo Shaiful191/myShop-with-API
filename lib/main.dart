@@ -2,11 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/utils/app_color.dart';
-import 'package:t_shirt_world/controllers/signInStatus_controller.dart';
-import 'package:t_shirt_world/utils/constants.dart';
-import 'package:t_shirt_world/utils/global.dart';
-import 'package:t_shirt_world/utils/route_generator.dart';
+import 'package:mySHOP/utils/app_color.dart';
+import 'package:mySHOP/controllers/signInStatus_controller.dart';
+import 'package:mySHOP/utils/constants.dart';
+import 'package:mySHOP/utils/global.dart';
+import 'package:mySHOP/utils/route_generator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

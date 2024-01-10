@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:t_shirt_world/models/product_model.dart';
-import 'package:t_shirt_world/service/apiServices.dart';
+import 'package:mySHOP/models/product_model.dart';
+import 'package:mySHOP/service/apiServices.dart';
 
 class ProductController extends GetxController {
   var isLoading = true.obs;

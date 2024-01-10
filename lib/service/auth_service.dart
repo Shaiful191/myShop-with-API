@@ -1,7 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:t_shirt_world/helper/helper.dart';
-import 'package:t_shirt_world/service/database_service.dart';
+import 'package:mySHOP/helper/helper.dart';
+import 'package:mySHOP/service/database_service.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;

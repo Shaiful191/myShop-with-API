@@ -1,16 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/controllers/product_controller.dart';
-import 'package:t_shirt_world/utils/app_color.dart';
-import 'package:t_shirt_world/controllers/bottom_navigation_controller.dart';
-import 'package:t_shirt_world/helper/helper.dart';
-import 'package:t_shirt_world/views/auth/login_page.dart';
-import 'package:t_shirt_world/views/product_details.dart';
-import 'package:t_shirt_world/views/search_page.dart';
-import 'package:t_shirt_world/views/user_profile_page.dart';
-import 'package:t_shirt_world/service/auth_service.dart';
-import 'package:t_shirt_world/componants/bottom_navigation_bar.dart';
+import 'package:mySHOP/controllers/product_controller.dart';
+import 'package:mySHOP/utils/app_color.dart';
+import 'package:mySHOP/controllers/bottom_navigation_controller.dart';
+import 'package:mySHOP/helper/helper.dart';
+import 'package:mySHOP/views/auth/login_page.dart';
+import 'package:mySHOP/views/product_details.dart';
+import 'package:mySHOP/views/search_page.dart';
+import 'package:mySHOP/views/user_profile_page.dart';
+import 'package:mySHOP/service/auth_service.dart';
+import 'package:mySHOP/componants/bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

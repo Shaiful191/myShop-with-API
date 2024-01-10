@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/utils/app_color.dart';
-import 'package:t_shirt_world/controllers/bottom_navigation_controller.dart';
+import 'package:mySHOP/utils/app_color.dart';
+import 'package:mySHOP/controllers/bottom_navigation_controller.dart';
 
-import 'package:t_shirt_world/views/home_page.dart';
-import 'package:t_shirt_world/views/search_page.dart';
-import 'package:t_shirt_world/views/user_profile_page.dart';
+import 'package:mySHOP/views/home_page.dart';
+import 'package:mySHOP/views/search_page.dart';
+import 'package:mySHOP/views/user_profile_page.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   // final index;

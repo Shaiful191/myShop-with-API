@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:t_shirt_world/helper/helper.dart';
+import 'package:mySHOP/helper/helper.dart';
 
 class IsSignInController extends GetxController {
   RxBool isSignedIn = false.obs;

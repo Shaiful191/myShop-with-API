@@ -1,4 +1,4 @@
-package com.example.t_shirt_world
+package com.shaiful_app.mySHOP
 
 import io.flutter.embedding.android.FlutterActivity
 

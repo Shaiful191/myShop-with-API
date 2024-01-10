@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/controllers/product_controller.dart';
+import 'package:mySHOP/controllers/product_controller.dart';
 
 class TestShowProducts extends StatelessWidget {
   TestShowProducts({super.key});

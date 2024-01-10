@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:t_shirt_world/views/auth/login_page.dart';
-import 'package:t_shirt_world/service/apiServices.dart';
-import 'package:t_shirt_world/service/auth_service.dart';
-import 'package:t_shirt_world/componants/bottom_navigation_bar.dart';
-import 'package:t_shirt_world/views/test_show_product.dart';
+import 'package:mySHOP/views/auth/login_page.dart';
+import 'package:mySHOP/service/apiServices.dart';
+import 'package:mySHOP/service/auth_service.dart';
+import 'package:mySHOP/componants/bottom_navigation_bar.dart';
+import 'package:mySHOP/views/test_show_product.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});

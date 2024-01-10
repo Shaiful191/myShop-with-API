@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_shirt_world/controllers/signInStatus_controller.dart';
-import 'package:t_shirt_world/views/added_product_list.dart';
-import 'package:t_shirt_world/views/auth/login_page.dart';
-import 'package:t_shirt_world/views/home_page.dart';
-import 'package:t_shirt_world/views/search_page.dart';
-import 'package:t_shirt_world/views/user_profile_page.dart';
+import 'package:mySHOP/controllers/signInStatus_controller.dart';
+import 'package:mySHOP/views/added_product_list.dart';
+import 'package:mySHOP/views/auth/login_page.dart';
+import 'package:mySHOP/views/home_page.dart';
+import 'package:mySHOP/views/search_page.dart';
+import 'package:mySHOP/views/user_profile_page.dart';
 
 
 class RouteGenerator {

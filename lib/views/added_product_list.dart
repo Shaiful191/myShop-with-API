@@ -28,7 +28,7 @@ class _AddedListState extends State<AddedList> {
                 // tileColor: Colors.deepOrange,
                 leading: CircleAvatar(
                   child: Image.asset(
-                    "assets/t_shirt_world_logo.jpg",
+                    "assets/mySHOP_logo.jpg",
                     fit: BoxFit.cover,
                   ),
                   //  Image.network(

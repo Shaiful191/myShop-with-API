@@ -1,6 +1,6 @@
 // import 'package:get/get.dart';
-// import 'package:t_shirt_world/helper/helper.dart';
-// import 'package:t_shirt_world/service/auth_service.dart';
+// import 'package:mySHOP/helper/helper.dart';
+// import 'package:mySHOP/service/auth_service.dart';
 
 // class UserController extends GetxController{
 //  RxString userName = "".obs;

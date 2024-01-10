@@ -1,4 +1,4 @@
-# t_shirt_world
+# mySHOP
 
 A new Flutter project.
 
