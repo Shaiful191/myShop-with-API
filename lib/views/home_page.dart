@@ -275,16 +275,16 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.all(0),
                 itemCount: 7,
                 separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    height: height * 0.02,
+                  );
+                },
+                itemBuilder: (BuildContext context, int index) {
                   return BestSellingCard(
                     height: height,
                     width: width,
                     productController: productController,
                     BestSellingindex: index + 10,
-                  );
-                },
-                itemBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    height: 16,
                   );
                 },
               ),
