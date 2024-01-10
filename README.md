@@ -28,5 +28,8 @@ https://fakestoreapi.com/products/categories
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![login](https://github.com/Shaiful191/myShop-with-API/assets/118191679/d7fd2226-3456-4335-84b7-6f055ae1f383)
+![register](https://github.com/Shaiful191/myShop-with-API/assets/118191679/8b93e3de-2fb8-479f-b669-eb9a343897f1)
+![homepage](https://github.com/Shaiful191/myShop-with-API/assets/118191679/02a40d2e-3e77-4e13-8c5b-7bc1f958710e)
+
 
