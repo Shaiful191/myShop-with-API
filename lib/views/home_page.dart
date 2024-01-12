@@ -20,194 +20,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // String userName = "";
-  // String email = "";
-
-  // AuthService authService = AuthService();
-
-  // gettingUserData() async {
-  //   await HelperFuctions.getUserEmailFormSF().then((value) {
-  //     setState(() {
-  //       email = value!;
-  //     });
-  //   });
-  //   await HelperFuctions.getUserNameFormSF().then((value) {
-  //     setState(() {
-  //       userName = value!;
-  //     });
-  //   });
-  // }
-
-  // List<String> _carouselImages = [];
-
-  // var _firestoreInstance = FirebaseFirestore.instance;
-
-  // fetchCarouselImages() async {
-  //   QuerySnapshot qn =
-  //       await _firestoreInstance.collection("carousel-slider").get();
-  //   setState(() {
-  //     for (int i = 0; i < qn.docs.length; i++) {
-  //       _carouselImages.add(
-  //         qn.docs[i]["img-path"],
-  //       );
-  //     }
-  //   });
-
-  //   return qn.docs;
-  // }
-
-  // fetchProducts() async {
-  //   QuerySnapshot qn = await _firestoreInstance.collection("products").get();
-  //   setState(() {
-  //     for (int i = 0; i < qn.docs.length; i++) {}
-  //   });
-
-  //   return qn.docs;
-  // }
-
   @override
   void initState() {
     // fetchCarouselImages();
     // fetchProducts();
+   productController.productList;
+   productController.categoriesList;
     super.initState();
   }
 
-  // Widget drawerItem({required String name, required IconData icon}) {
-  //   return ListTile(
-  //     leading: Icon(
-  //       icon,
-  //       color: Colors.white,
-  //     ),
-  //     title: Text(
-  //       name,
-  //       style: TextStyle(fontSize: 20, color: Colors.white),
-  //     ),
-  //   );
-  // }
+ 
+  var categoriesImageList = [12, 7, 2, 14];
 
-  // final BottomNavigationController bottomNavigationController =
-  //     Get.put(BottomNavigationController());
+  ProductController productController =  Get.put(ProductController());
+//  late ProductController productController;
+//   _loadData() async {
+//    productController = await Get.put(ProductController());
+//     ;
+//   }
 
-  final ProductController productController = Get.put(ProductController());
-  // var colorList = [
-  //   Color(0xffFEDEDF),
-  //   Color(0xffFFEAC3),
-  //   Color(0xffCEE7D4),
-  //   Color(0xffFFFCCF),
-  // ];
-  var categoriesImageList = [
-    12, 7, 2, 14
-    //  productController.productList[7]["image"].toString(),
-    //            productController.productList[14]["image"].toString(),
-    //            productController.productList[2]["image"].toString(),
-    //            productController.productList[12]["image"].toString(),
-  ];
   @override
   Widget build(BuildContext context) {
+   //_loadData();
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      // drawer: Drawer(
-      //   child: ListView(
-      //     padding: const EdgeInsets.symmetric(vertical: 50),
-      //     children: [
-      //       Icon(
-      //         Icons.account_circle,
-      //         size: 150,
-      //         color: Colors.grey[700],
-      //       ),
-      //       const SizedBox(
-      //         height: 15,
-      //       ),
-      //       Text(
-      //         userName,
-      //         textAlign: TextAlign.center,
-      //         style: const TextStyle(fontWeight: FontWeight.bold),
-      //       ),
-      //       const SizedBox(
-      //         height: 30,
-      //       ),
-      //       const Divider(
-      //         height: 2,
-      //       ),
-      //       ListTile(
-      //         onTap: () {},
-      //         selected: true,
-      //         selectedColor: Theme.of(context).primaryColor,
-      //         contentPadding:
-      //             const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      //         leading: const Icon(Icons.group),
-      //         title:
-      //             const Text("Groups", style: TextStyle(color: Colors.black)),
-      //       ),
-
-      //       // ListTile(
-      //       //   onTap: () {
-      //       //     nextScreenReplace(
-      //       //         context,
-      //       //         ProfilePage(
-      //       //           username: userName,
-      //       //           email: email,
-      //       //         ));
-      //       //   },
-      //       //   contentPadding:
-      //       //       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      //       //   leading: const Icon(Icons.person),
-      //       //   title:
-      //       //       const Text("Profile", style: TextStyle(color: Colors.black)),
-      //       // ),
-
-      //       ListTile(
-      //         onTap: () async {
-      //           showDialog(
-      //               //  barrierDismissible: false,
-      //               context: context,
-      //               builder: (context) {
-      //                 return AlertDialog(
-      //                   title: const Text("Logout"),
-      //                   content: const Text("Are you sure you want to logout?"),
-      //                   actions: [
-      //                     Container(
-      //                         child: ElevatedButton(
-      //                       style: ElevatedButton.styleFrom(
-      //                         backgroundColor: Colors.red,
-      //                       ),
-      //                       child: const Text('Cancel'),
-      //                       onPressed: () {
-      //                         Navigator.pop(context);
-      //                       },
-      //                     )),
-      //                     Container(
-      //                         child: ElevatedButton(
-      //                       style: ElevatedButton.styleFrom(
-      //                         backgroundColor: Colors.green,
-      //                       ),
-      //                       child: const Text('Ok'),
-      //                       onPressed: () async {
-      //                         await authService.signOut();
-      //                         Navigator.of(context).pushAndRemoveUntil(
-      //                             MaterialPageRoute(
-      //                                 builder: (context) => const LoginPage()),
-      //                             (route) => false);
-      //                       },
-      //                     )),
-      //                   ],
-      //                 );
-      //               });
-      //           // authService.signOut().whenComplete(() {
-      //           //   nextScreenReplace(context, const LoginPage());
-      //           // });
-      //         },
-      //         contentPadding:
-      //             const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      //         leading: const Icon(Icons.exit_to_app),
-      //         title:
-      //             const Text("Logout", style: TextStyle(color: Colors.black)),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+    
 
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -239,9 +78,9 @@ class _HomePageState extends State<HomePage> {
                   return Expanded(
                     // flex: 1,
                     child: ListView.separated(
-                     
                       scrollDirection: Axis.horizontal,
-                      itemCount: 4,
+                      itemCount:productController.categoriesList.length,
+                    //  itemCount: 4,
                       itemBuilder: (BuildContext context, int index) {
                         return CategoriesCard(
                           productController: productController,
@@ -271,24 +110,35 @@ class _HomePageState extends State<HomePage> {
               leadingName: "Best Selling",
               trailingName: "See All",
             ),
+            //  Obx(() {
+            //       return Text(
+            //         controller.counter.toString(),
+            //         style: Theme.of(context).textTheme.headlineMedium,
+            //       );
+            //     }),
+
             Expanded(
-              child: ListView.separated(
-                padding: EdgeInsets.all(0),
+              child: 
+                ListView.separated(
+                  padding: EdgeInsets.all(0),
+                //  itemCount: productController.categoriesList.length,
                 itemCount: 7,
-                separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    height: height * 0.02,
-                  );
-                },
-                itemBuilder: (BuildContext context, int index) {
-                  return BestSellingCard(
-                    height: height,
-                    width: width,
-                    productController: productController,
-                    BestSellingindex: index + 10,
-                  );
-                },
-              ),
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(
+                      height: height * 0.02,
+                    );
+                  },
+                  itemBuilder: (BuildContext context, int index) {
+                    return BestSellingCard(
+                      height: height,
+                      width: width,
+                      productController: productController,
+                      BestSellingindex: index + 10,
+                    );
+                  },
+                ),
+              
+              
             ),
           ],
         ),
@@ -351,7 +201,9 @@ class BestSellingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return
+    Obx(() {
+      return  Container(
       decoration: BoxDecoration(
         color: Color(0xffF0F0F0),
         borderRadius: BorderRadius.circular(8),
@@ -364,7 +216,9 @@ class BestSellingCard extends StatelessWidget {
           top: height * 0.02,
           bottom: height * 0.02,
         ),
-        child: Row(
+        child: 
+        
+        Row(
           children: [
             Container(
               decoration: BoxDecoration(
@@ -451,6 +305,8 @@ class BestSellingCard extends StatelessWidget {
         ),
       ),
     );
+    });
+    
   }
 }
 
@@ -577,26 +433,27 @@ class CategoriesCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(5.0),
       child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 8),
-          margin: const EdgeInsets.only(bottom: 6.0),
-          // height: height * 0.15,
-          //alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            //color: color,
-            borderRadius: BorderRadius.circular(5),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0.0, 1.0), //(x,y)
-                blurRadius: 6.0,
-              ),
-            ],
-          ),
-          height: height,
-          // width: width * 0.20,
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        margin: const EdgeInsets.only(bottom: 6.0),
+        // height: height * 0.15,
+        //alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          //color: color,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, 1.0), //(x,y)
+              blurRadius: 6.0,
+            ),
+          ],
+        ),
+        height: height,
+        // width: width * 0.20,
 
-          child: Column(
+        child: Obx(() {
+          return Column(
             // mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             //  crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -633,7 +490,9 @@ class CategoriesCard extends StatelessWidget {
               //   ),
               // ),
             ],
-          )),
+          );
+        }),
+      ),
     );
   }
 }
