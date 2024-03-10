@@ -25,10 +25,14 @@ class RouteGenerator {
     //   case '/search':
     //     return  showSearch(context: context, delegate: SearchBlog());
     //  //   return MaterialPageRoute(builder: (context) => SearchPage());
+     
+        case '/homepage':
+        return MaterialPageRoute(builder: (context) => HomePage());
       case '/cart':
         return MaterialPageRoute(builder: (context) => AddedList());
       case '/profile':
         return MaterialPageRoute(builder: (context) => UserProfile());
+
 
       default:
         return MaterialPageRoute(

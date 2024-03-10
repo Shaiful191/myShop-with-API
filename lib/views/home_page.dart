@@ -20,23 +20,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  ProductController productController = Get.put(ProductController());
+
   @override
   void initState() {
     // fetchCarouselImages();
     // fetchProducts();
-    productController.productList;
-    productController.categoriesList;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<ProductController>().fetchProducts();
+      Get.find<ProductController>().fetchCategoriesProducts();
+    });
+
     super.initState();
   }
 
-  var categoriesImageList = [12, 7, 2, 14];
+   var categoriesImageList = [1, 7, 2, 4];
 
-  ProductController productController = Get.put(ProductController());
-//  late ProductController productController;
-//   _loadData() async {
-//    productController = await Get.put(ProductController());
-//     ;
-//   }
+  //  var categoriesImageList = [12, 7, 2, 14];
 
   @override
   Widget build(BuildContext context) {
@@ -66,39 +67,53 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: height * 0.15,
                 child: Obx(() {
-                  if (productController.isLoading.value) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  } else {
-                    //  return Text( productController.productList[0]["title"].toString());
-                    // print(productController.categoriesList[0]);
-                    return Expanded(
-                      // flex: 1,
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: productController.categoriesList.length,
-                        //  itemCount: 4,
-                        itemBuilder: (BuildContext context, int index) {
-                          return CategoriesCard(
-                            productController: productController,
-                            width: width,
-                            height: height * 0.15,
-                            //  color: colorList[index],
-                            //   color: colorList[index],
-                            index: index,
-                            ImageListindex: categoriesImageList[index],
-                            //  categoriesName: "Bread",
-                          );
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return SizedBox(
-                            width: width * 0.04,
-                          );
-                        },
-                      ),
-                    );
-                  }
+                  // return Center(
+                  //   child: CircularProgressIndicator(),
+                  // );
+
+                  //  return Text( productController.productList[0]["title"].toString());
+                  // print(productController.categoriesList[0]);
+                  return productController.categoriesList.length == 0
+                      ? Center(
+                          child: CircularProgressIndicator(
+                          color: AppColors.primary,
+                        ))
+                      : Expanded(
+                          // flex: 1,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount:
+                                     productController.categoriesList.length,
+
+
+                                // productController.categoriesList.length == 0
+                                //     ? 0
+                                //     :
+                                //      productController.categoriesList.length,
+
+                            //productController.categoriesList.length,
+                            //  itemCount: 4,
+                            itemBuilder: (BuildContext context, int index) {
+                              return CategoriesCard(
+                                productController: productController,
+                                width: width,
+                                height: height * 0.15,
+                                //  color: colorList[index],
+                                //   color: colorList[index],
+                                index: index,
+                              //  ImageListindex: 1,
+
+                               ImageListindex: categoriesImageList[index],
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return SizedBox(
+                                width: width * 0.04,
+                              );
+                            },
+                          ),
+                        );
                 }),
               ),
               SizedBox(
@@ -108,33 +123,36 @@ class _HomePageState extends State<HomePage> {
                 leadingName: "Best Selling",
                 trailingName: "See All",
               ),
-              //  Obx(() {
-              //       return Text(
-              //         controller.counter.toString(),
-              //         style: Theme.of(context).textTheme.headlineMedium,
-              //       );
-              //     }),
+              Obx(() {
+                return productController.productList.length == 0
+                    ? CircularProgressIndicator(
+                        color: AppColors.primary,
+                      )
+                    :
 
-              Expanded(
-                child: ListView.separated(
-                  padding: EdgeInsets.all(0),
-                  //  itemCount: productController.categoriesList.length,
-                  itemCount: 7,
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      height: height * 0.02,
-                    );
-                  },
-                  itemBuilder: (BuildContext context, int index) {
-                    return BestSellingCard(
-                      height: height,
-                      width: width,
-                      productController: productController,
-                      BestSellingindex: index + 10,
-                    );
-                  },
-                ),
-              ),
+                    //productController.productList
+
+                    Expanded(
+                        child: ListView.separated(
+                          padding: EdgeInsets.all(0),
+                          //  itemCount: productController.categoriesList.length,
+                          itemCount: 7,
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              height: height * 0.02,
+                            );
+                          },
+                          itemBuilder: (BuildContext context, int index) {
+                            return BestSellingCard(
+                              height: height,
+                              width: width,
+                              productController: productController,
+                              BestSellingindex: index + 10,
+                            );
+                          },
+                        ),
+                      );
+              }),
             ],
           ),
         );
@@ -454,10 +472,6 @@ class CategoriesCard extends StatelessWidget {
               SizedBox(
                 height: height * 0.60,
                 child: Image.network(
-                  // productController.productList[7]["image"].toString(),
-                  //  productController.productList[14]["image"].toString(),
-                  // productController.productList[2]["image"].toString(),
-                  // productController.productList[12]["image"].toString(),
                   productController.productList[ImageListindex]["image"]
                       .toString(),
                 ),
@@ -467,8 +481,6 @@ class CategoriesCard extends StatelessWidget {
               ),
               Text(
                 productController.categoriesList[index].toString(),
-                //  productController.categoriesList[index].toString(),
-                //  productController.productList[index]["category"].toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
