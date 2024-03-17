@@ -10,7 +10,6 @@ It is an ecommerce app.
 * Api integration: Http Package
 * Local Storage: Shared preferences Package
 * Authentication: Firebase
-* Architecture: Model-View-Controller (MVC)
 * Responsive Design: MediaQuery
 
 
